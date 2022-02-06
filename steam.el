@@ -45,7 +45,9 @@
 
 (defvar steam-games nil "An XML file of the user's games on Steam.")
 (defcustom steam-username nil
-  "The Steam username."
+  "The Steam username.
+It refers to the text in the CUSTOM URL field
+in your Steam account profile settings."
   :type 'string
   :group 'steam)
 (defcustom steam-logo-dir "steamlogos"
