@@ -34,9 +34,20 @@
 
 (declare-function org-current-level "org")
 
+(defgroup steam nil
+  "Launch games in your Steam library from Emacs."
+  :group 'external
+  :link '(url-link :tag "GitHub" "https://github.com/Kungsgeten/steam.el"))
+
 (defvar steam-games nil "An XML file of the user's games on Steam.")
-(defvar steam-username nil "The Steam username.")
-(defvar steam-logo-dir "steamlogos" "The dir where logos will be downloaded, relative to the org-file.")
+(defcustom steam-username nil
+  "The Steam username."
+  :type 'string
+  :group 'steam)
+(defcustom steam-logo-dir "steamlogos"
+  "The dir where logos will be downloaded, relative to the org-file."
+  :type 'string
+  :group 'steam)
 
 (defun steam-check-xml-response (xml)
   "Check XML from steam for errors, return an error message if an error was detected, else nil."
